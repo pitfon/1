@@ -22,7 +22,6 @@ public class LobbyController : MonoBehaviour
     private void SetButtons()
     {
         _startButton.onClick.AddListener(StartGame);
-        _startButton.interactable = false;
     }
 
     private void StartGame()
