@@ -1687,7 +1687,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6892009646224039476, guid: 708c72d81c3b5c54db79a410a9c985e6, type: 3}
+    - target: {fileID: 6831006142161290091, guid: 708c72d81c3b5c54db79a410a9c985e6, type: 3}
       propertyPath: _target
       value: 
       objectReference: {fileID: 643867657}
@@ -1704,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gunman
       objectReference: {fileID: 0}
+    - target: {fileID: 4796341548118526280, guid: 094dbd4d0fa63c94c9e2e43e351860b8, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 643867657}
     - target: {fileID: 6005662806399461337, guid: 094dbd4d0fa63c94c9e2e43e351860b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.19
