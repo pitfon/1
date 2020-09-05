@@ -21,11 +21,11 @@ public class Saboteur : AI_Base
         Instantiate(_explosion, transform.position, Quaternion.identity);
         base.Attack();
         
-        if(Vector3.Distance(transform.position, _gameController.Player1.transform.position) <= _radius)
+        if(_player1Dist <= _radius)
         {
             _gameController.Player1.Health.Damage(_attackDamage);
         }
-        if (Vector3.Distance(transform.position, _gameController.Player2.transform.position) <= _radius)
+        if (_player2Dist <= _radius)
         {
             _gameController.Player2.Health.Damage(_attackDamage);
         }
