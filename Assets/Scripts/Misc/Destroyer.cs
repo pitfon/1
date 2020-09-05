@@ -18,6 +18,6 @@ public class Destroyer : MonoBehaviour
             yield return new WaitForEndOfFrame();
             timer += Time.deltaTime;
         }
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
