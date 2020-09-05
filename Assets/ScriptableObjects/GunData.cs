@@ -33,13 +33,13 @@ public class SpriteChoose
     public Sprite Left;
     public Sprite Right;
 
-    public Sprite GetSprite(Vector3 direction)
-    {
-        if (direction.z == -1)
-        {
+    //public Sprite GetSprite(Vector3 direction)
+    //{
+     //   if (direction.z == -1)
+     //   {
 
-        }
-    }
+        //}
+    //}
 
 }
 public struct Statistic
