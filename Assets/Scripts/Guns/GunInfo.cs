@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "gunInfo1", menuName = "GunInfo")]
 public class GunInfo : ScriptableObject
 {
     [SerializeField] private string _name;
 
     [Space]
-    [SerializeField] private List<Statistic> _damage;
-    [SerializeField] private List<Statistic> _fireRate;
-    [SerializeField] private List<Statistic> _reloadTime;
-    [SerializeField] private List<Statistic> _magazine;
+    [SerializeField] private Statistic _damage;
+    [SerializeField] private Statistic _fireRate;
+    [SerializeField] private Statistic _reloadTime;
+    [SerializeField] private Statistic _magazine;
 
     [Space]
     [SerializeField] private float _bulletSpeed;
 
     public string Name => _name;
-    public List<Statistic> Damage => _damage;
-    public List<Statistic> FireRate => _fireRate;
-    public List<Statistic> ReloadTime => _reloadTime;
-    public List<Statistic> Magazine => _magazine;
+    public Statistic Damage => _damage;
+    public Statistic FireRate => _fireRate;
+    public Statistic ReloadTime => _reloadTime;
+    public Statistic Magazine => _magazine;
 
     public float BulletSpeed => _bulletSpeed;
 
