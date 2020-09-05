@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 354088773465741463}
   - component: {fileID: 354088773465741460}
   - component: {fileID: 354088773465741461}
-  - component: {fileID: 354088773465741462}
   - component: {fileID: 354088773465741457}
   m_Layer: 0
   m_Name: Character
@@ -104,29 +103,8 @@ MonoBehaviour:
   _left: 97
   _right: 100
   _shift: 304
-  rb: {fileID: 354088773465741462}
-  direction: {x: 0, y: 0}
---- !u!50 &354088773465741462
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354088773465741482}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  rb: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &354088773465741457
 MonoBehaviour:
   m_ObjectHideFlags: 0

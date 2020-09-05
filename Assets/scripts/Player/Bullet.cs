@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private KeyCode shoot;
     public float speed=15;
-    public Vector2 _direction;
+    public Vector3 _direction;
     float destroyTime = 5;
     float lifeTime = 0;
     public void Init(PlayerController controller)
