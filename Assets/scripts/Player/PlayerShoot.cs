@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public PlayerData _data;
+
     public bool isFiring;
     PlayerController controller;
 
