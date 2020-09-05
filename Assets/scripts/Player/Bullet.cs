@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     public void Init(PlayerController controller)
     {
     _direction = controller.direction;
+        print(_direction);
     }
     private void Update()
     {

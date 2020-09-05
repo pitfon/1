@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private int _hor;
     private int _dirhor;
     private int _dirver;
-    Vector3 _checkPos;
     private bool _isMoving;
     [SerializeField]
     Rigidbody rb;
@@ -85,9 +84,6 @@ public class PlayerController : MonoBehaviour
                 _hor = 0;
             }
         }
-
-
-
         if (Input.GetKeyDown(_shift))
         {
             _speed = _speed * _runSpeed;
