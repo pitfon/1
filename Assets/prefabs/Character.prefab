@@ -141,11 +141,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   bullet: {fileID: 558172574341972435, guid: 8274e3a45e9a2084f81ad716354d9e4e, type: 3}
-  BulletSpeed: 1
+  BulletSpeed: 5
   TimeBeetweenShots: 0.1
   ShotCounter: 0
-  firePoint: {fileID: 354088775249318686}
-  shoot: 323
+  ShootPosition: {fileID: 354088775249318686}
+  shoot: 103
 --- !u!1 &354088773792581923
 GameObject:
   m_ObjectHideFlags: 0
