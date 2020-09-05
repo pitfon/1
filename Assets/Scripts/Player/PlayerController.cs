@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     Vector3 _checkPos;
     private bool _isMoving;
     [SerializeField]
-    Rigidbody2D rb;
+    Rigidbody rb;
 
-    public Vector2 direction;
+    public Vector3 direction;
     private void Start()
     {
         _dirhor = 1;
@@ -40,34 +40,6 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-        /*if (Input.GetKey(_up))
-        {
-            _vert = 1;
-            _dirver = 1;
-        }
-        if (Input.GetKey(_down))
-        {
-            _vert = -1;
-            _dirver = -1;
-        }
-        if (!Input.GetKey(_down) && !Input.GetKey(_up))
-        {
-            _vert = 0;
-        }
-        if (Input.GetKey(_left))
-        {
-            _hor = -1;
-            _dirhor = -1;
-        }
-        if (Input.GetKey(_right))
-        {
-            _hor = 1;
-            _dirhor = 1;
-        }
-        if (!Input.GetKey(_left) && !Input.GetKey(_right))
-        {
-            _hor = 0;
-        }*/
         if(!Input.GetKey(_left) && !Input.GetKey(_right)&& !Input.GetKey(_up) && !Input.GetKey(_down))
         {
             _vert = 0;
@@ -124,8 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             _speed = _speed / _runSpeed;
         }
-
-        direction = new Vector2(_dirhor, _dirver);
-        rb.velocity = new Vector2(_speed * _hor, _speed * _vert);
+        direction = new Vector3(_dirhor,0, _dirver);
+        rb.velocity = new Vector3(_speed * _hor,0, _speed * _vert);
     }
 }
