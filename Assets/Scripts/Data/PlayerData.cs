@@ -11,12 +11,16 @@ public class PlayerData
     public int Health { get; private set; } = 100;
     public int Armor { get; private set; } = 0;
 
+    public List<GunData> Guns { get; private set; }
+
     public System.Action OnMoneyAmountChange;
 
     public PlayerData(string name, int lookID)
     {
         Name = name;
         LookID = lookID;
+
+        Guns = GunsManager.Instance.GetGuns();
     }
 
     public bool HasMoney(int value)
