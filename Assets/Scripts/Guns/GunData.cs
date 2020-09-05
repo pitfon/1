@@ -6,10 +6,10 @@ public class GunData
 {
     public string Name { get; private set; }
 
-    public List<Statistic> Damage { get; private set; }
-    public List<Statistic> FireRate { get; private set; }
-    public List<Statistic> ReloadTime { get; private set; }
-    public List<Statistic> Magazine { get; private set; }
+    public Statistic Damage { get; private set; }
+    public Statistic FireRate { get; private set; }
+    public Statistic ReloadTime { get; private set; }
+    public Statistic Magazine { get; private set; }
 
     public float BulletSpeed { get; private set; }
 
@@ -17,9 +17,9 @@ public class GunData
     {
         Name = gunInfo.Name;
 
-        Damage = new List<Statistic>(gunInfo.Damage);
-        FireRate = new List<Statistic>(gunInfo.FireRate);
-        ReloadTime = new List<Statistic>(gunInfo.ReloadTime);
-        Magazine = new List<Statistic>(gunInfo.Magazine);
+        Damage = new Statistic(gunInfo.Damage);
+        FireRate = new Statistic(gunInfo.FireRate);
+        ReloadTime = new Statistic(gunInfo.ReloadTime);
+        Magazine = new Statistic(gunInfo.Magazine);
     }
 }

@@ -10,7 +10,7 @@ public class Statistic
 
     public string Name => _name;
 
-    public StatisticLevel CurrentLevel;
+    public StatisticLevel CurrentLevel => _levels[Level];
     public StatisticLevel NextLevel => MaxLevel ? null : _levels[Level + 1];
 
     public int Level { get; private set; } = 0;
@@ -23,8 +23,15 @@ public class Statistic
             Level++;
         }
     }
+
+    public Statistic(Statistic statistic)
+    {
+        _name = statistic._name;
+        _levels = new List<StatisticLevel>(statistic._levels);
+    }
 }
 
+[System.Serializable]
 public class StatisticLevel
 {
     public float Value;
