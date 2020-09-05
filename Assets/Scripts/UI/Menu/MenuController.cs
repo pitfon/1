@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameData _gameData;
+    [SerializeField] private GameDataHolder _gameData;
 
     [Space]
     [SerializeField] private Button _startButton;
