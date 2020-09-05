@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             _speed = _speed / _runSpeed;
         }
-        direction = new Vector3(_dirhor,0, _dirver);
+        direction = new Vector3(_dirhor, _dirver,0);
         rb.velocity = new Vector3(_speed * _hor,0, _speed * _vert);
     }
 }
