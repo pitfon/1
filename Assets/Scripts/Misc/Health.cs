@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
     protected virtual void Death()
     {
         gameObject.SetActive(false);
-
+        pgx_CameraShaker.Instance.AddShake(1);
     }
 
     
