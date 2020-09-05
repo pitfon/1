@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode _right;
     [SerializeField] private KeyCode _shift;
 
-    private float _speed = 1;
-    private float _runSpeed = 2;
+    private float _speed = 2;
+    private float _runSpeed = 4;
     private int _vert;
     private int _hor;
     private int _dirhor;
@@ -57,13 +57,13 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(_up))
             {
-                _vert = -1;
-                _dirver = 1;
+                _vert = 1;
+                _dirver = -1;
             }
             if (Input.GetKey(_down))
             {
-                _vert = 1;
-                _dirver = -1;
+                _vert = -1;
+                _dirver = 1;
             }
             if (!Input.GetKey(_down) && !Input.GetKey(_up))
             {
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             _speed = _speed / _runSpeed;
         }
 
-        direction = new Vector3(_dirhor, _dirver, 0);
+        direction = new Vector3(_dirhor, -_dirver, 0).normalized;
         rb.velocity = new Vector3(_speed * _hor, 0, _speed * _vert);
 
         _lookController?.UpdateDirection(direction);

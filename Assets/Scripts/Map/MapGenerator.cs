@@ -84,7 +84,7 @@ public class MapGenerator : MonoBehaviour
 
     private void SetCamera()
     {
-        _camera.transform.position = new Vector3(_width / 2.0f, -10, _height / 2.0f);
+        _camera.transform.position = new Vector3(_width / 2.0f, 10, _height / 2.0f);
         _camera.orthographicSize = _height / 2.0f;
     }
 }

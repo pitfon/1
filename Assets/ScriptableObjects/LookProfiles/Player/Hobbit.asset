@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b13b67fb064b436bb0a4d9569fa8a45, type: 3}
   m_Name: Hobbit
   m_EditorClassIdentifier: 
-  _delay: 1
+  _delay: 0.2
   _avatar: {fileID: 21300000, guid: be033b8cc6fcb4d78b5f43121ae3418f, type: 3}
   _moveUp:
   - {fileID: 21300000, guid: 99e63bbc1f07c4db0892237c4ea3cf7d, type: 3}
