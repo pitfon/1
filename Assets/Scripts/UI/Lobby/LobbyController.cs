@@ -11,10 +11,27 @@ public class LobbyController : MonoBehaviour
     [Space]
     [SerializeField] private Button _startButton;
 
+    [SerializeField] private List<PlayerLobbyContainer> _containers;
+
     #region Start
     private void Start()
     {
+        _gameData.StartGame();
         SetButtons();
+        SetContainers();
+    }
+    #endregion
+
+    #region Containers
+    private void SetContainers()
+    {
+        for (int i = 0; i < _containers.Count; i++)
+        {
+            if (i < _gameData.PlayersData.Count)
+            {
+                _containers[i].Init(_gameData.PlayersData[i]);
+            }
+        }
     }
     #endregion
 
