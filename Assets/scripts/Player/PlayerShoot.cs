@@ -5,48 +5,60 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public bool isFiring;
-    PlayerController controller;
+    [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private Transform _shootPosition;
 
-    public Bullet bullet;
+    private PlayerReferences _playerReferences;
 
-    public float BulletSpeed;
+    public GunData CurrentGun { get; private set; }
 
-    public float TimeBeetweenShots;
-    public float ShotCounter;
-    [SerializeField]
-    public Transform ShootPosition;
+    public int Ammo { get; private set; }
+
+    public float ShotCounter { get; private set; }
+    public float ReloadTime { get; private set; }
 
     private AudioSource _audioSource;
 
     [SerializeField] private KeyCode shoot;
     public void Awake()
     {
-        controller = GetComponent<PlayerController>();
         _audioSource = GetComponent<AudioSource>();
     }
+
+    public void Init(PlayerReferences playerReferences)
+    {
+        _playerReferences = playerReferences;
+
+        CurrentGun = playerReferences.PlayerData.GetCurrentGunData();
+        Ammo = (int)CurrentGun.Magazine.CurrentLevel.Value;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(shoot))
+        if (Ammo <= 0)
         {
-            isFiring = true;
-        }
-        if (Input.GetKeyUp(shoot)) 
-        {
-            isFiring = false;
-        }
-        ShotCounter -= Time.deltaTime;
-        if (Input.GetKeyDown(shoot))
-        {
-            if (ShotCounter <= 0)
+            ReloadTime -= Time.deltaTime;
+            if (ReloadTime <= 0)
             {
-                ShotCounter = TimeBeetweenShots;
-                Bullet newBullet = Instantiate(bullet) as Bullet;
-                newBullet.transform.position = ShootPosition.position;
-                newBullet.transform.localRotation = Quaternion.identity;
-                newBullet.Init(controller);
-                _audioSource.Play();
+                Ammo = (int)CurrentGun.Magazine.CurrentLevel.Value;
+                ReloadTime = CurrentGun.ReloadTime.CurrentLevel.Value;
+                ShotCounter = 0;
             }
-        }  
+        }
+        else
+        {
+            ShotCounter -= Time.deltaTime;
+            if (ShotCounter <= 0 && (Input.GetKeyDown(shoot) || (Input.GetKey(shoot) && CurrentGun.Autiomatic)))
+            {
+                ShotCounter = CurrentGun.FireRate.CurrentLevel.Value;
+                Bullet newBullet = Instantiate(_bulletPrefab) as Bullet;
+                newBullet.transform.position = _shootPosition.position;
+                newBullet.transform.localRotation = Quaternion.identity;
+                newBullet.Init(_playerReferences);
+                _audioSource.Play();
+
+                Ammo--;
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ public class PlayerReferences : MonoBehaviour
     public PlayerController PlayerController { get; private set; }
     public Health Health { get; private set; }
     public CharacterLookController LookController { get; private set; }
+    public PlayerShoot PlayerShoot { get; private set; }
 
     public PlayerData PlayerData { get; private set; }
 
@@ -15,6 +16,7 @@ public class PlayerReferences : MonoBehaviour
         PlayerController = GetComponent<PlayerController>();
         Health = GetComponent<Health>();
         LookController = GetComponent<CharacterLookController>();
+        PlayerShoot = GetComponent<PlayerShoot>();
     }
 
     public void Init(PlayerData data)
@@ -22,5 +24,6 @@ public class PlayerReferences : MonoBehaviour
         PlayerData = data;
 
         Health.Init(this);
+        PlayerShoot.Init(this);
     }
 }

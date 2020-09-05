@@ -5,26 +5,39 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private KeyCode shoot;
-    public float speed=15;
-    public Vector3 _direction;
-    float destroyTime = 5;
-    float lifeTime = 0;
-    public void Init(PlayerController controller)
+    public PlayerReferences PlayerReferences { get; private set; }
+
+    private float _speed = 15;
+    private Vector3 _direction;
+
+    float _destroyTime = 5;
+
+    public void Init(PlayerReferences playerReferences)
     {
-    _direction = controller.direction;
+        PlayerReferences = playerReferences;
+
+        _speed = playerReferences.PlayerShoot.CurrentGun.BulletSpeed;
+        _direction = playerReferences.PlayerController.direction;
     }
+
     private void Update()
     {
-        print(_direction);
         transform.rotation = Quaternion.Euler(90, 0, 0);
-        transform.Translate(_direction * speed * Time.deltaTime);
+        transform.Translate(_direction * _speed * Time.deltaTime);
 
-
-        lifeTime += Time.deltaTime;
-        if (lifeTime > destroyTime)
+        _destroyTime -= Time.deltaTime;
+        if (_destroyTime <= 0)
         {
-           Destroy(gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        AI_Base aiBase = other.GetComponent<AI_Base>();
+        if (aiBase)
+        {
+            aiBase.GetComponent<Health>().Damage((int)PlayerReferences.PlayerShoot.CurrentGun.Damage.CurrentLevel.Value);
         }
     }
 }

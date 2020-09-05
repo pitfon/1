@@ -51,4 +51,9 @@ public class PlayerData
             OnGunChange?.Invoke();
         }
     }
+
+    public GunData GetCurrentGunData()
+    {
+        return Guns.Find(x => x.Name == CurrentGunName);
+    }
 }

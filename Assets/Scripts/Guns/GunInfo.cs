@@ -15,6 +15,7 @@ public class GunInfo : ScriptableObject
 
     [Space]
     [SerializeField] private float _bulletSpeed;
+    [SerializeField] private bool _automatic;
 
     [Space]
     [SerializeField] private int _price;
@@ -26,6 +27,7 @@ public class GunInfo : ScriptableObject
     public Statistic Magazine => _magazine;
 
     public float BulletSpeed => _bulletSpeed;
+    public bool Automatic => _automatic;
 
     public int Price => _price;
 

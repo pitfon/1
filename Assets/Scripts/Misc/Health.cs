@@ -16,15 +16,6 @@ public class Health : MonoBehaviour
         CurrentHealth = playerReferences.PlayerData.Health;
     }
 
-    void OnTriggerEnter(Collider other)
-
-    {
-        if (other.gameObject.tag == ("Bullet"))
-        {
-            print("hit");
-            Damage(25);
-        }
-    }
     protected virtual void Update()
     {
         if (Input.GetMouseButtonDown(0)) Damage(25);
