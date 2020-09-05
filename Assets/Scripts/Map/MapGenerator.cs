@@ -45,7 +45,7 @@ public class MapGenerator : MonoBehaviour
     public void Init()
     {
         GenerateMap();
-        SetExitAndEntry();
+        //SetExitAndEntry();
         SetCamera();
     }
 
