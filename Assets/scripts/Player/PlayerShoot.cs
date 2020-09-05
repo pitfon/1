@@ -41,7 +41,6 @@ public class PlayerShoot : MonoBehaviour
                 Bullet newBullet = Instantiate(bullet) as Bullet;
                 newBullet.transform.position = ShootPosition.position;
                 newBullet.transform.localRotation = Quaternion.identity;
-                newBullet.transform.localRotation = Quaternion.Euler(90, 0, 0);
                 newBullet.Init(controller);
             }
         }  

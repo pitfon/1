@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -12,11 +13,14 @@ public class Bullet : MonoBehaviour
     public void Init(PlayerController controller)
     {
     _direction = controller.direction;
-        print(_direction);
     }
     private void Update()
     {
+        print(_direction);
+        transform.rotation = Quaternion.Euler(90, 0, 0);
         transform.Translate(_direction * speed * Time.deltaTime);
+
+
         lifeTime += Time.deltaTime;
         if (lifeTime > destroyTime)
         {
