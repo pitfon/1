@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f580a53271853478db09223a30912b14, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  _name: pistol
+  _name: Pistol
   _damage:
     _name: Damage
     _levels:
@@ -44,3 +44,4 @@ MonoBehaviour:
     - Value: 12
       UpgradeCost: 50
   _bulletSpeed: 5
+  _price: 0
