@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameData", menuName = "GameData")]
-public class GameData : ScriptableObject
+
+public class GameData
 {
-    [SerializeField] private string _startMoney;
+    public int Level { get; private set; } = 1;
 
-    public List<PlayerData> PlayersData { get; private set; }
-
-    public void StartGame(string player1Name, string player2Name)
+    public void UpgradeLevel()
     {
-        PlayersData = new List<PlayerData>();
-
-        PlayersData.Add(new PlayerData(player1Name));
-        PlayersData.Add(new PlayerData(player2Name));
+        Level++;
     }
 }
