@@ -19,7 +19,7 @@ public class CharacterLookController : MonoBehaviour
 
     private float _time;
 
-    private void Start()
+    private void Awake()
     {
         if (_characterLookProfile != null)
         {

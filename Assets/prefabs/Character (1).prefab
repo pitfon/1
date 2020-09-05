@@ -135,9 +135,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364507439585532216}
+  - component: {fileID: 1771682205465859096}
   - component: {fileID: 7364507439585532223}
-  - component: {fileID: 7364507439585532222}
   - component: {fileID: 7364507439585532221}
+  - component: {fileID: 7364507439585532222}
   - component: {fileID: 7364507439585532220}
   - component: {fileID: 2017765270670446766}
   - component: {fileID: 6168188875536435445}
@@ -166,6 +167,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1771682205465859096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364507439585532163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3330cb7c469846da83c092f8d297634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &7364507439585532223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -217,6 +230,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7364507439585532221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364507439585532163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82dd99c9c2f43d419f31c4773f6cf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFiring: 0
+  bullet: {fileID: 558172574341972435, guid: 8274e3a45e9a2084f81ad716354d9e4e, type: 3}
+  BulletSpeed: 5
+  TimeBeetweenShots: 0.1
+  ShotCounter: 0
+  ShootPosition: {fileID: 7364507438701382795}
+  shoot: 108
 --- !u!114 &7364507439585532222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,25 +269,6 @@ MonoBehaviour:
   rb: {fileID: 7364507439585532220}
   _lookController: {fileID: 7293287769746055810}
   direction: {x: 0, y: 0, z: 0}
---- !u!114 &7364507439585532221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7364507439585532163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82dd99c9c2f43d419f31c4773f6cf79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFiring: 0
-  bullet: {fileID: 558172574341972435, guid: 8274e3a45e9a2084f81ad716354d9e4e, type: 3}
-  BulletSpeed: 5
-  TimeBeetweenShots: 0.1
-  ShotCounter: 0
-  ShootPosition: {fileID: 7364507438701382795}
-  shoot: 108
 --- !u!54 &7364507439585532220
 Rigidbody:
   m_ObjectHideFlags: 0
