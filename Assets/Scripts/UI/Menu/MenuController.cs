@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
 
     private void StartGame()
     {
-        _gameData.StartGame(_player1NameInput.text, _player2NameInput.text);
+        _gameData.StartGame(_player1NameInput.text, 0, _player2NameInput.text, 1);
         SceneManager.LoadScene(1);
     }
     #endregion
