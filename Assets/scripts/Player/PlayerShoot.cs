@@ -38,8 +38,9 @@ public class PlayerShoot : MonoBehaviour
             if (ShotCounter <= 0)
             {
                 ShotCounter = TimeBeetweenShots;
-                Bullet newBullet = Instantiate(bullet, Vector3.zero, ShootPosition.rotation, ShootPosition) as Bullet;
-                newBullet.transform.localPosition = Vector3.zero;
+                Bullet newBullet = Instantiate(bullet) as Bullet;
+                newBullet.transform.position = ShootPosition.position;
+                newBullet.transform.localRotation = Quaternion.identity;
                 newBullet.Init(controller);
             }
         }  
