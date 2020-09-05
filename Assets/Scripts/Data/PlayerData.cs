@@ -12,8 +12,10 @@ public class PlayerData
     public int Armor { get; private set; } = 0;
 
     public List<GunData> Guns { get; private set; }
+    public string CurrentGunName { get; private set; }
 
     public System.Action OnMoneyAmountChange;
+    public System.Action OnGunChange;
 
     public PlayerData(string name, int lookID)
     {
@@ -21,6 +23,7 @@ public class PlayerData
         LookID = lookID;
 
         Guns = GunsManager.Instance.GetGuns();
+        CurrentGunName = Guns.Find(x => x.IsBought).Name;
     }
 
     public bool HasMoney(int value)
@@ -38,5 +41,14 @@ public class PlayerData
         Money += value;
         OnMoneyAmountChange?.Invoke();
         return true;
+    }
+
+    public void ChangeGun(string gunName)
+    {
+        if (CurrentGunName != gunName)
+        {
+            CurrentGunName = gunName;
+            OnGunChange?.Invoke();
+        }
     }
 }

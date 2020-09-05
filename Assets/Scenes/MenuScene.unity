@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guns:
   - {fileID: 11400000, guid: da92f7f1173d5426a9c06dfb39d99003, type: 2}
+  - {fileID: 11400000, guid: 386a6d180900247a0a21b64080db4dbc, type: 2}
 --- !u!4 &468057481
 Transform:
   m_ObjectHideFlags: 0
