@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     PlayerController controller;
     GameObject character;
     private Vector2 direction;
+    float destroyTime = 5;
+    float lifeTime = 0;
     private void Awake()
     {
         character = GameObject.Find("Character");
@@ -22,5 +24,10 @@ public class Bullet : MonoBehaviour
             direction = controller.direction;
         }
         transform.Translate(direction * speed * Time.deltaTime);
+        lifeTime += Time.deltaTime;
+        if (lifeTime > destroyTime)
+        {
+           Destroy(gameObject);
+        }
     }
 }
