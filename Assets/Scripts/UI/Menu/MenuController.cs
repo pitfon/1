@@ -13,14 +13,14 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Button _startButton;
 
     [Space]
-    [SerializeField] private TMPro.TMP_InputField _player1NameInput;
-    [SerializeField] private TMPro.TMP_InputField _player2NameInput;
+    [SerializeField] private PlayerInfoMenuView _player1Info;
+    [SerializeField] private PlayerInfoMenuView _player2Info;
 
     #region Start
     private void Start()
     {
         SetButtons();
-        SetInputFields();
+        SetListeners();
     }
     #endregion
 
@@ -29,25 +29,28 @@ public class MenuController : MonoBehaviour
     {
         _startButton.onClick.AddListener(StartGame);
         _startButton.interactable = false;
+
+        _player1Info.Init(0);
+        _player2Info.Init(1);
     }
 
     private void StartGame()
     {
-        _gameData.StartGame(_player1NameInput.text, 0, _player2NameInput.text, 1);
+        _gameData.StartGame(_player1Info.Name, _player1Info.AvatarID, _player2Info.Name, _player2Info.AvatarID);
         SceneManager.LoadScene(1);
     }
     #endregion
 
     #region InputFields
-    private void SetInputFields()
+    private void SetListeners()
     {
-        _player1NameInput.onValueChanged.AddListener(OnValueChangeListener);
-        _player2NameInput.onValueChanged.AddListener(OnValueChangeListener);
+        _player1Info.OnStateChanged += OnStateChangeListener;
+        _player2Info.OnStateChanged += OnStateChangeListener;
     }
 
-    private void OnValueChangeListener(string value)
+    private void OnStateChangeListener()
     {
-        _startButton.interactable = !string.IsNullOrEmpty(_player1NameInput.text) && !string.IsNullOrEmpty(_player2NameInput.text);
+        _startButton.interactable = _player1Info.IsReady && _player2Info.IsReady;
     }
     #endregion
 }
