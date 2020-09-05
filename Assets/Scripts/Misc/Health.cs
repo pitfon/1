@@ -29,9 +29,14 @@ public class Health : MonoBehaviour
     {
         CurrentHealth -= damage;
         StartCoroutine(DamageFlash());
+
         print(CurrentHealth);
         OnCurrentHealthChanged?.Invoke();
         
+
+        OnCurrentHealthChanged?.Invoke();
+        print(CurrentHealth);
+
         if(CurrentHealth <= 0)
         {
             Death();
@@ -57,6 +62,7 @@ public class Health : MonoBehaviour
     protected virtual void Death()
     {
         gameObject.SetActive(false);
+
     }
 
     
