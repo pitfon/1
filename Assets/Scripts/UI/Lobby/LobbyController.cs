@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LobbyController : MonoBehaviour
 {
-    [SerializeField] private GameData _gameData;
+    [SerializeField] private GameDataHolder _gameData;
 
     [Space]
     [SerializeField] private Button _startButton;
