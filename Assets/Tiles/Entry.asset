@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Entry
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -3386362785629855861, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+  m_DefaultSprite: {fileID: -4473554079132131015, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -3386362785629855861, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+    - {fileID: 7399533318584292489, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -32,7 +32,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: 8923255143942298309, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+    - {fileID: 8958964884274798394, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: 7561777613838612889, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+    - {fileID: -9117358011029420329, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -60,7 +60,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 778136270091268006, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+    - {fileID: 7713819393718715255, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: 4755373664117421245, guid: db81a719e6f00412385f0603101bfbe4, type: 3}
+    - {fileID: -113938230342917849, guid: 4fce837e9783db548b490856d88eb0cb, type: 3}
     m_GameObject: {fileID: 0}
     m_AnimationSpeed: 1
     m_PerlinScale: 0.5
