@@ -12,6 +12,8 @@ public class GunData
     public Statistic Magazine { get; private set; }
 
     public float BulletSpeed { get; private set; }
+    public bool IsBought { get; private set; }
+    public int Price { get; private set; }
 
     public GunData(GunInfo gunInfo)
     {
@@ -21,5 +23,13 @@ public class GunData
         FireRate = new Statistic(gunInfo.FireRate);
         ReloadTime = new Statistic(gunInfo.ReloadTime);
         Magazine = new Statistic(gunInfo.Magazine);
+
+        Price = gunInfo.Price;
+        IsBought = Price <= 0;
+    }
+
+    public void SetBought()
+    {
+        IsBought = true;
     }
 }

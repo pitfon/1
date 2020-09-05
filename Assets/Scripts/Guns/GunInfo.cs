@@ -16,6 +16,9 @@ public class GunInfo : ScriptableObject
     [Space]
     [SerializeField] private float _bulletSpeed;
 
+    [Space]
+    [SerializeField] private int _price;
+
     public string Name => _name;
     public Statistic Damage => _damage;
     public Statistic FireRate => _fireRate;
@@ -23,6 +26,8 @@ public class GunInfo : ScriptableObject
     public Statistic Magazine => _magazine;
 
     public float BulletSpeed => _bulletSpeed;
+
+    public int Price => _price;
 
     public GunData GetGunData()
     {
