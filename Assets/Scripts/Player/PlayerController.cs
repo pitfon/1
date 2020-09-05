@@ -34,22 +34,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Movement();
-        if(!Input.GetKey(_up)&&!Input.GetKey(_down))
-        {
-            _dirver = 0;
-
-        }
-        if(!Input.GetKey(_left) && !Input.GetKey(_right))
-        {
-            _dirhor = 0;
-        }
     }
 
 
 
     private void Movement()
     {
-        if (Input.GetKey(_up))
+        /*if (Input.GetKey(_up))
         {
             _vert = 1;
             _dirver = 1;
@@ -76,6 +67,51 @@ public class PlayerController : MonoBehaviour
         if (!Input.GetKey(_left) && !Input.GetKey(_right))
         {
             _hor = 0;
+        }*/
+        if(!Input.GetKey(_left) && !Input.GetKey(_right)&& !Input.GetKey(_up) && !Input.GetKey(_down))
+        {
+            _vert = 0;
+            _hor = 0;
+        }
+        else
+        {
+            if (!Input.GetKey(_up) && !Input.GetKey(_down))
+            {
+                _dirver = 0;
+
+            }
+            if (!Input.GetKey(_left) && !Input.GetKey(_right))
+            {
+                _dirhor = 0;
+            }
+            if (Input.GetKey(_up))
+            {
+                _vert = 1;
+                _dirver = 1;
+            }
+            if (Input.GetKey(_down))
+            {
+                _vert = -1;
+                _dirver = -1;
+            }
+            if (!Input.GetKey(_down) && !Input.GetKey(_up))
+            {
+                _vert = 0;
+            }
+            if (Input.GetKey(_left))
+            {
+                _hor = -1;
+                _dirhor = -1;
+            }
+            if (Input.GetKey(_right))
+            {
+                _hor = 1;
+                _dirhor = 1;
+            }
+            if (!Input.GetKey(_left) && !Input.GetKey(_right))
+            {
+                _hor = 0;
+            }
         }
 
 
