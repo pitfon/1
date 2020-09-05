@@ -6,14 +6,14 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header ("Movement")]
+    [Header("Movement")]
     [SerializeField] private KeyCode _up;
     [SerializeField] private KeyCode _down;
     [SerializeField] private KeyCode _left;
     [SerializeField] private KeyCode _right;
     [SerializeField] private KeyCode _shift;
 
-    private float _speed = 5;
+    private float _speed = 1;
     private float _runSpeed = 2;
     private int _vert;
     private int _hor;
@@ -21,14 +21,17 @@ public class PlayerController : MonoBehaviour
     private int _dirver;
 
 
-    [SerializeField]
-    Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
+
+    [SerializeField] private CharacterLookController _lookController;
 
     public Vector3 direction;
     private void Start()
     {
         _dirhor = 1;
         _dirver = 1;
+
+        _lookController = GetComponent<CharacterLookController>();
     }
     private void Update()
     {
@@ -36,7 +39,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Movement()
     {
-        if(!Input.GetKey(_left) && !Input.GetKey(_right)&& !Input.GetKey(_up) && !Input.GetKey(_down))
+        if (!Input.GetKey(_left) && !Input.GetKey(_right) && !Input.GetKey(_up) && !Input.GetKey(_down))
         {
             _vert = 0;
             _hor = 0;
@@ -54,12 +57,12 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(_up))
             {
-                _vert = 1;
+                _vert = -1;
                 _dirver = 1;
             }
             if (Input.GetKey(_down))
             {
-                _vert = -1;
+                _vert = 1;
                 _dirver = -1;
             }
             if (!Input.GetKey(_down) && !Input.GetKey(_up))
@@ -90,7 +93,9 @@ public class PlayerController : MonoBehaviour
             _speed = _speed / _runSpeed;
         }
 
-        direction = new Vector3(_dirhor, _dirver,0);
-        rb.velocity = new Vector3(_speed * _hor,0, _speed * _vert);
+        direction = new Vector3(_dirhor, _dirver, 0);
+        rb.velocity = new Vector3(_speed * _hor, 0, _speed * _vert);
+
+        _lookController?.UpdateDirection(direction);
     }
 }

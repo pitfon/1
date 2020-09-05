@@ -31,25 +31,19 @@ public class MapGenerator : MonoBehaviour
         {
             _gameData.GameData.UpgradeLevel();
 
-            GenerateMap();
-            SetExitAndEntry();
-            SetCamera();
+            Init();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             _gameData.StartGame();
 
-            GenerateMap();
-            SetExitAndEntry();
-            SetCamera();
+            Init();
         }
     }
 
-    private void Start()
+    public void Init()
     {
-        _gameData.StartGame();
-
         GenerateMap();
         SetExitAndEntry();
         SetCamera();

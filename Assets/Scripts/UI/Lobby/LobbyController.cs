@@ -16,6 +16,8 @@ public class LobbyController : MonoBehaviour
     #region Start
     private void Start()
     {
+        _gameData.DebugCheck();
+
         SetButtons();
         SetContainers();
     }
