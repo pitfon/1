@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     private int _dirhor;
     private int _dirver;
 
+    public KeyCode Up => _up;
+    public KeyCode Down => _down;
+    public KeyCode Left => _left;
+    public KeyCode Right => _right;
+    public KeyCode Shift => _shift;
 
     [SerializeField] private Rigidbody rb;
 

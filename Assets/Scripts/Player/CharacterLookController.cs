@@ -12,7 +12,7 @@ public class CharacterLookController : MonoBehaviour
     private LookDirection _left;
     private LookDirection _right;
 
-    private CharacterLookProfile _currentProfile;
+    public CharacterLookProfile CurrentProfile { get; private set; }
     private LookDirection _currentLookDirection = null;
 
     private Coroutine _coroutine;
@@ -67,7 +67,7 @@ public class CharacterLookController : MonoBehaviour
     {
         if (_coroutine != null) { StopCoroutine(_coroutine); }
 
-        _currentProfile = lookProfile;
+        CurrentProfile = lookProfile;
 
         _up = new LookDirection(lookProfile.MoveUp, false);
         _down = new LookDirection(lookProfile.MoveDown, false);
@@ -89,7 +89,7 @@ public class CharacterLookController : MonoBehaviour
             yield return wait;
             _time += Time.deltaTime;
 
-            if (_time > _currentProfile.Delay)
+            if (_time > CurrentProfile.Delay)
             {
                 _time = 0;
                 _spriteRenderer.sprite = _currentLookDirection.Update(true);

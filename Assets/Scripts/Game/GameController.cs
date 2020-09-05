@@ -21,15 +21,15 @@ public class GameController : MonoBehaviour
         InitPlayers();
 
         _mapGenerator.Init();
-        _gameUI.Init(Player1, Player2);
+        _gameUI.Init(_gameData, Player1, Player2);
     }
 
     private void InitData()
     {
         _gameData.DebugCheck();
 
-        Player1.SetData(_gameData.PlayersData[0]);
-        Player2.SetData(_gameData.PlayersData[1]);
+        Player1.Init(_gameData.PlayersData[0]);
+        Player2.Init(_gameData.PlayersData[1]);
     }
 
     private void InitPlayers()

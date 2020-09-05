@@ -6,13 +6,16 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     public float CurrentHealth { get; private set; } = 100;
+    public float MaxHealth { get; private set; } = 100;
 
     public System.Action OnCurrentHealthChanged;
 
-    protected virtual void Start()
+    public void Init(PlayerReferences playerReferences)
     {
-        
+        MaxHealth = playerReferences.PlayerData.Health;
+        CurrentHealth = playerReferences.PlayerData.Health;
     }
+
     void OnTriggerEnter(Collider other)
 
     {
@@ -33,12 +36,12 @@ public class Health : MonoBehaviour
 
         print(CurrentHealth);
         OnCurrentHealthChanged?.Invoke();
-        
+
 
         OnCurrentHealthChanged?.Invoke();
         print(CurrentHealth);
 
-        if(CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Death();
         }
@@ -51,7 +54,7 @@ public class Health : MonoBehaviour
         float timer = 0;
 
         _spriteRenderer.color = Color.red;
-        while(timer < duration)
+        while (timer < duration)
         {
             _spriteRenderer.color = Color.Lerp(_spriteRenderer.color, Color.white, Time.deltaTime * fadeSpeed);
             yield return new WaitForEndOfFrame();
@@ -66,5 +69,5 @@ public class Health : MonoBehaviour
         pgx_CameraShaker.Instance.AddShake(1);
     }
 
-    
+
 }
