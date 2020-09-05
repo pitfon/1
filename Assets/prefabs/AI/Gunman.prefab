@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612735db69cab704dae8f2904af4564b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackRange: 5
   _target: {fileID: 0}
 --- !u!1 &3618023706713717192
 GameObject:
