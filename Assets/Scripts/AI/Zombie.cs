@@ -12,4 +12,9 @@ public class Zombie : AI_Base
     {
         base.Update();
     }
+
+    protected override void Attack()
+    {
+        base.Attack();
+    }
 }

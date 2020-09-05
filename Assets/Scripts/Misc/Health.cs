@@ -16,10 +16,6 @@ public class Health : MonoBehaviour
         CurrentHealth = playerReferences.PlayerData.Health;
     }
 
-    protected virtual void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) Damage(25);
-    }
     public virtual void Damage(int damage)
     {
         CurrentHealth -= damage;

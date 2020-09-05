@@ -8,17 +8,18 @@ public abstract class AI_Base : MonoBehaviour
 {
     [SerializeField] protected float _attackRange;
     [SerializeField] protected float _attackCooldown = 1.0f;
-    [SerializeField] protected float _attackDamage;
+    [SerializeField] protected int _attackDamage;
     [SerializeField] protected Transform _target;
 
     protected float _attackTimer;
     protected NavMeshAgent _agent;
+    protected GameController _gameController;
 
 
     protected virtual void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-
+        _gameController = GameController.Instance;
     }
 
     protected virtual void Update()

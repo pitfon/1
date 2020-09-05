@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController Instance;
+
     [SerializeField] private GameDataHolder _gameData;
     [SerializeField] private MapGenerator _mapGenerator;
     [SerializeField] private GameUI _gameUI;
@@ -14,6 +16,11 @@ public class GameController : MonoBehaviour
 
     public PlayerReferences Player1 => _player1References;
     public PlayerReferences Player2 => _player2References;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
