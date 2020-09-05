@@ -17,10 +17,13 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     public Transform ShootPosition;
 
+    private AudioSource _audioSource;
+
     [SerializeField] private KeyCode shoot;
     public void Awake()
     {
         controller = GetComponent<PlayerController>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -42,6 +45,7 @@ public class PlayerShoot : MonoBehaviour
                 newBullet.transform.position = ShootPosition.position;
                 newBullet.transform.localRotation = Quaternion.identity;
                 newBullet.Init(controller);
+                _audioSource.Play();
             }
         }  
     }

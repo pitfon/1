@@ -23,7 +23,7 @@ public class PlayerInfoLobbyView : MonoBehaviour
 
     private void UpdateInfoTexts()
     {
-        _avatar.sprite = CharacterLooksHolder.Instance.GetLook(_data.LookID);
+        _avatar.sprite = CharacterLooksHolder.Instance.GetLookAvatar(_data.LookID);
         _avatar.SetNativeSize();
 
         _nameText.text = _data.Name;

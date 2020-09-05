@@ -46,7 +46,7 @@ public class PlayerInfoMenuView : MonoBehaviour
             int prevID = AvatarID;
             AvatarID = id;
 
-            _playerAvatar.sprite = CharacterLooksHolder.Instance.GetLook(id);
+            _playerAvatar.sprite = CharacterLooksHolder.Instance.GetLookAvatar(id);
             _playerAvatar.SetNativeSize();
 
             OnAvatarIDChanged?.Invoke(prevID, AvatarID);

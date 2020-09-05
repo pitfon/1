@@ -25,7 +25,7 @@ public class PlayerAvatarButton : MonoBehaviour
 
         _button.onClick.AddListener(SetID);
 
-        _image.sprite = CharacterLooksHolder.Instance.GetLook(ID);
+        _image.sprite = CharacterLooksHolder.Instance.GetLookAvatar(ID);
         _image.SetNativeSize();
 
         PlayerInfoMenuView.OnAvatarIDChanged += CheckInterectable;
