@@ -12,16 +12,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode _left;
     [SerializeField] private KeyCode _right;
     [SerializeField] private KeyCode _shift;
-    private float _horizontalVel;
-    private float _verticalVel;
+
     private float _speed = 5;
     private float _runSpeed = 2;
     private int _vert;
     private int _hor;
     private int _dirhor;
     private int _dirver;
-    Vector3 _checkPos;
-    private bool _isMoving;
+
+
     [SerializeField]
     Rigidbody rb;
 
@@ -91,8 +90,7 @@ public class PlayerController : MonoBehaviour
             _speed = _speed / _runSpeed;
         }
 
-        direction = new Vector3(_dirhor, 0,_dirver);
-        print(direction);
+        direction = new Vector3(_dirhor, _dirver,0);
         rb.velocity = new Vector3(_speed * _hor,0, _speed * _vert);
     }
 }

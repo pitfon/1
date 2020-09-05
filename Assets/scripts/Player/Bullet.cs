@@ -13,10 +13,11 @@ public class Bullet : MonoBehaviour
     public void Init(PlayerController controller)
     {
     _direction = controller.direction;
-        print("a" + _direction);
     }
     private void Update()
     {
+        print(_direction);
+        transform.rotation = Quaternion.Euler(90, 0, 0);
         transform.Translate(_direction * speed * Time.deltaTime);
 
 
