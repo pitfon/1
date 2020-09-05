@@ -17,8 +17,10 @@ public class PlayerReferences : MonoBehaviour
         LookController = GetComponent<CharacterLookController>();
     }
 
-    public void SetData(PlayerData data)
+    public void Init(PlayerData data)
     {
         PlayerData = data;
+
+        Health.Init(this);
     }
 }

@@ -52,7 +52,7 @@ public class MapGenerator : MonoBehaviour
     private void GenerateMap()
     {
         _width = _baseWidth + _gameData.GameData.Level;
-        _height = Mathf.RoundToInt(_width * 0.525f);
+        _height = Mathf.RoundToInt(_width * 0.5f);
 
         _groundTilemap.ClearAllTiles();
         _entryAndExitTilemap.ClearAllTiles();
@@ -84,7 +84,7 @@ public class MapGenerator : MonoBehaviour
 
     private void SetCamera()
     {
-        _camera.transform.position = new Vector3(_width / 2.0f, 10, _height / 1.75f);
-        _camera.orthographicSize = _height / 1.7f;
+        _camera.transform.position = new Vector3(_width / 2.0f, 10, _height / 1.65f);
+        _camera.orthographicSize = _height / 1.65f;
     }
 }
