@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 4b2e0ebcebf77014eb9ca3ade6629fef
+=======
 guid: 051dae32bfe8b4fd6b2315452e0dd0e8
+>>>>>>> 9a60e32a16d83598ae3c2ae6da384af757f9aee1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +36,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+    filterMode: -1
+=======
     filterMode: 0
+>>>>>>> 9a60e32a16d83598ae3c2ae6da384af757f9aee1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -46,7 +54,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+=======
   spritePixelsToUnits: 10
+>>>>>>> 9a60e32a16d83598ae3c2ae6da384af757f9aee1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,6 +75,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
+    maxTextureSize: 2048
+=======
     maxTextureSize: 32
     resizeAlgorithm: 0
     textureFormat: -1
@@ -100,6 +115,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 32
+>>>>>>> 9a60e32a16d83598ae3c2ae6da384af757f9aee1
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
