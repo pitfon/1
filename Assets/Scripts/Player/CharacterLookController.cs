@@ -76,7 +76,7 @@ public class CharacterLookController : MonoBehaviour
 
         _currentLookDirection = _down;
 
-        _coroutine = StartCoroutine(UpdateLook());
+        //_coroutine = StartCoroutine(UpdateLook());
     }
 
     private IEnumerator UpdateLook()

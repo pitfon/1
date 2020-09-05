@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7293287769746055810, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _characterLookProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 9649bf291f27146ea94cc456016afccd, type: 2}
     - target: {fileID: 7364507438625214548, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
       propertyPath: m_Sprite
       value: 
