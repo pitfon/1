@@ -61,7 +61,7 @@ public class PlayerShoot : MonoBehaviour
                 Bullet newBullet = Instantiate(_bulletPrefab) as Bullet;
                 newBullet.transform.position = _shootPosition.position;
                 newBullet.transform.localRotation = Quaternion.identity;
-                newBullet.Init(_playerReferences);
+                newBullet.Init(_playerReferences, CurrentGun);
                 _audioSource.Play();
 
                 Ammo--;
