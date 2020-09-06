@@ -6,6 +6,7 @@ using UnityEngine;
 public class GunInfo : ScriptableObject
 {
     [SerializeField] private string _name;
+    [SerializeField] private Sprite _avatar;
 
     [Space]
     [SerializeField] private Statistic _damage;
@@ -21,6 +22,8 @@ public class GunInfo : ScriptableObject
     [SerializeField] private int _price;
 
     public string Name => _name;
+    public Sprite Avatar => _avatar;
+
     public Statistic Damage => _damage;
     public Statistic FireRate => _fireRate;
     public Statistic ReloadTime => _reloadTime;

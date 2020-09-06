@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunData
 {
     public string Name { get; private set; }
+    public Sprite Avatar { get; private set; }
 
     public Statistic Damage { get; private set; }
     public Statistic FireRate { get; private set; }
@@ -19,6 +20,7 @@ public class GunData
     public GunData(GunInfo gunInfo)
     {
         Name = gunInfo.Name;
+        Avatar = gunInfo.Avatar;
 
         Damage = new Statistic(gunInfo.Damage);
         FireRate = new Statistic(gunInfo.FireRate);

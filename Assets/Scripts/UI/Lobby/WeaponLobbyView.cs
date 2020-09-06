@@ -17,6 +17,7 @@ public class WeaponLobbyView : MonoBehaviour
     [SerializeField] private GameObject _buyPanel;
     [SerializeField] private Button _buyButton;
     [SerializeField] private TMPro.TextMeshProUGUI _buyPriceText;
+    [SerializeField] private GameObject _lock;
 
     [Header("UpgradePanel")]
     [SerializeField] private GameObject _upgradePanel;
@@ -29,6 +30,8 @@ public class WeaponLobbyView : MonoBehaviour
     {
         _gun = gun;
         _data = data;
+        _gunAvatar.sprite = gun.Avatar;
+        _gunAvatar.SetNativeSize();
 
         _gunNameText.text = gun.Name;
 
@@ -49,8 +52,11 @@ public class WeaponLobbyView : MonoBehaviour
 
     private void CheckPanels()
     {
+        _lock.SetActive(!_gun.IsBought);
         _buyPanel.SetActive(!_gun.IsBought);
         _upgradePanel.SetActive(_gun.IsBought);
+
+        _wearButton.interactable = _gun.IsBought;
     }
 
     private void Buy()

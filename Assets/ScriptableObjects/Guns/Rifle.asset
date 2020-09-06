@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   _name: Rifle
+  _avatar: {fileID: 21300000, guid: 6f14c7e719f0b3145ab6710f87f126cd, type: 3}
   _damage:
     _name: Damage
     _levels:

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LobbyController : MonoBehaviour
 {
     [SerializeField] private GameDataHolder _gameData;
+    [SerializeField] private bool _debugCheck;
 
     [Space]
     [SerializeField] private Button _startButton;
@@ -16,7 +17,12 @@ public class LobbyController : MonoBehaviour
     #region Start
     private void Start()
     {
-        //_gameData.DebugCheck();
+#if UNITY_EDITOR
+        if (_debugCheck)
+        {
+            _gameData.DebugCheck();
+        }
+#endif
 
         SetButtons();
         SetContainers();
