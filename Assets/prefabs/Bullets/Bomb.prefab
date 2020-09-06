@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd12a074f3bd64319b92eac95c8a5252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosion: {fileID: 4408904976252661566, guid: bbffdac91da98334ead8eb02eab08485, type: 3}
+  _explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!212 &4863759138439492570
 SpriteRenderer:
   m_ObjectHideFlags: 0
