@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
             Debug.Log("All mobs Killed");
 
             _gameData.GameData.UpgradeLevel();
-            _gameData.PlayersData.ForEach(x => x.UpdateMoney(100));
+            _gameData.PlayersData.ForEach(x => x.UpdateMoney(100+_gameData.GameData.Level*20));
 
             Debug.Log("Load lobby");
             SceneManager.LoadScene(1);
