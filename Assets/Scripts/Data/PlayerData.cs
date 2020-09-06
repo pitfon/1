@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,5 +56,11 @@ public class PlayerData
     public GunData GetCurrentGunData()
     {
         return Guns.Find(x => x.Name == CurrentGunName);
+    }
+
+    public void ClearEvents()
+    {
+        OnMoneyAmountChange = null;
+        OnGunChange = null;
     }
 }
