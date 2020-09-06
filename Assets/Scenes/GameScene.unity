@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: 6bc898a80b8734a8582e4be05f29bfe6, type: 2}
-  _debugCheck: 1
+  _debugCheck: 0
   _mapGenerator: {fileID: 842044775}
   _mobSpawner: {fileID: 6082232441819610896}
   _gameUI: {fileID: 327025403}
