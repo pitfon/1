@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     public float MaxHealth { get; private set; } = 100;
 
     public System.Action OnCurrentHealthChanged;
-    public System.Action OnDeath;
+    public System.Action<Health> OnDeath;
 
     public void Init(PlayerReferences playerReferences)
     {
@@ -52,7 +52,7 @@ public class Health : MonoBehaviour
 
     protected virtual void Death()
     {
-        OnDeath?.Invoke();
+        OnDeath?.Invoke(this);
         Alive = false;
         //pgx_CameraShaker.Instance.AddShake(1);
         //Destroy(gameObject);
