@@ -13,12 +13,12 @@ public class Bullet : MonoBehaviour
 
     float _destroyTime = 5;
 
-    public void Init(PlayerReferences playerReferences, GunData gun)
+    public virtual void Init(PlayerReferences playerReferences, GunData gun)
     {
         PlayerReferences = playerReferences;
         _gun = gun;
 
-        _speed = playerReferences.PlayerShoot.CurrentGun.BulletSpeed;
+        _speed = gun.BulletSpeed;
         _direction = playerReferences.PlayerController.direction;
         transform.rotation = Quaternion.Euler(90, 0, 0);
     }

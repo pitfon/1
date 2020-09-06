@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Torpedo : MonoBehaviour
+public class Torpedo : Bullet
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform _torpedoRenderer;
 
-    // Update is called once per frame
-    void Update()
+    public override void Init(PlayerReferences playerReferences, GunData gun)
     {
-        
+        base.Init(playerReferences, gun);
+
+        Vector3 rotation = Vector3.zero;
+        if (_direction.y > 0)
+        {
+            rotation = new Vector3(0, 0, 90);
+        }
+        else if (_direction.y < 0)
+        {
+            rotation = new Vector3(0, 0, -90);
+        }
+        else if (_direction.x < 0)
+        {
+            rotation = new Vector3(0, 0, 180);
+        }
+        _torpedoRenderer.localRotation = Quaternion.Euler(rotation);
     }
 }

@@ -34,6 +34,6 @@ MonoBehaviour:
     _levels:
     - Value: 1
       UpgradeCost: 0
-  _bulletSpeed: 50
+  _bulletSpeed: 40
   _automatic: 0
   _price: 0

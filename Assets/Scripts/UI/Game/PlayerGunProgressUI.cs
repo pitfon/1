@@ -14,7 +14,7 @@ public class PlayerGunProgressUI : MonoBehaviour
     {
         _gunAvatar.sprite = playerShoot.CurrentGun.Avatar;
         _gunAvatar.SetNativeSize();
-        _keyText.text = playerShoot.Shoot.ToString();
+        _keyText.text = playerShoot.Shoot.ToString().Replace("Keypad", "");
 
         playerShoot.Progress += UpdateUI;
 
