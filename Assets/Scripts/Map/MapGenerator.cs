@@ -21,6 +21,11 @@ public class MapGenerator : MonoBehaviour
 
     [Space]
     [SerializeField, Range(10, 100)] private int _baseWidth = 29;
+    [SerializeField, Range(10, 100)] private int _maxWidth = 40;
+
+    [Space]
+    [SerializeField] private Transform _rightBoundary;
+    [SerializeField] private Transform _topBoundary;
 
     public int Width { get; private set; }
     public int Height { get; private set; }
@@ -51,8 +56,13 @@ public class MapGenerator : MonoBehaviour
 
     private void GenerateMap()
     {
-        Width = _baseWidth + _gameData.GameData.Level;
+        Width = Mathf.Clamp(_baseWidth + _gameData.GameData.Level, 1, _maxWidth);
         Height = Mathf.RoundToInt(Width * 0.5f);
+
+        _rightBoundary.transform.position = new Vector3(Width, 0, _rightBoundary.transform.position.z);
+        _topBoundary.transform.position = new Vector3(_topBoundary.transform.position.x, 0, Height);
+
+        Debug.Log($"Generate {Width}x{Height}");
 
         _groundTilemap.ClearAllTiles();
         _entryAndExitTilemap.ClearAllTiles();

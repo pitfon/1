@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 199865407}
   - component: {fileID: 199865406}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Right Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,13 +262,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199865404}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 16.86, y: 0, z: 4.28}
-  m_LocalScale: {x: 17, y: 1, z: 0.25}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 20, y: 0, z: 20}
+  m_LocalScale: {x: 42, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 681016961}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!208 &199865406
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199865404}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: 6bc898a80b8734a8582e4be05f29bfe6, type: 2}
+  _debugCheck: 1
   _mapGenerator: {fileID: 842044775}
   _mobSpawner: {fileID: 6082232441819610896}
   _gameUI: {fileID: 327025403}
@@ -834,9 +835,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1798648123}
-  - {fileID: 1999891352}
   - {fileID: 2061122062}
   - {fileID: 199865405}
+  - {fileID: 1999891352}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -925,6 +926,9 @@ MonoBehaviour:
   _entryTile: {fileID: 11400000, guid: 58aa43df8f8b547eb82c71a5dd39f3e4, type: 2}
   _exitTile: {fileID: 11400000, guid: 10a8f076d69864c149c08009d34eb39c, type: 2}
   _baseWidth: 16
+  _maxWidth: 40
+  _rightBoundary: {fileID: 199865405}
+  _topBoundary: {fileID: 1999891352}
 --- !u!4 &842044776
 Transform:
   m_ObjectHideFlags: 0
@@ -2797,7 +2801,7 @@ GameObject:
   - component: {fileID: 1798648120}
   - component: {fileID: 1798648119}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Bottom Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2839,7 +2843,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798648118}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2889,8 +2893,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798648118}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0, z: 0.125}
-  m_LocalScale: {x: 17, y: 1, z: 0.25}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalScale: {x: 42, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 681016961}
   m_RootOrder: 0
@@ -2909,7 +2913,7 @@ GameObject:
   - component: {fileID: 1999891354}
   - component: {fileID: 1999891353}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Top Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2923,11 +2927,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999891351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0, z: 9.57}
-  m_LocalScale: {x: 17, y: 1, z: 0.25}
+  m_LocalPosition: {x: 20, y: 0, z: 20}
+  m_LocalScale: {x: 42, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 681016961}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1999891353
 NavMeshObstacle:
@@ -2965,7 +2969,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999891351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3021,7 +3025,7 @@ GameObject:
   - component: {fileID: 2061122064}
   - component: {fileID: 2061122063}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Left Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3034,13 +3038,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061122061}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0.13, y: 0, z: 4.28}
-  m_LocalScale: {x: 17, y: 1, z: 0.25}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 42, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 681016961}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!208 &2061122063
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3077,7 +3081,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061122061}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

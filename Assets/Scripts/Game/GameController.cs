@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     [SerializeField] private GameDataHolder _gameData;
+    [SerializeField] private bool _debugCheck;
+
+    [Space]
     [SerializeField] private MapGenerator _mapGenerator;
     [SerializeField] private MobSpawner _mobSpawner;
     [SerializeField] private GameUI _gameUI;
@@ -40,7 +43,10 @@ public class GameController : MonoBehaviour
 
     private void InitData()
     {
-        //_gameData.DebugCheck();
+        if (_debugCheck)
+        {
+            _gameData.DebugCheck();
+        }
 
         Player1.Init(_gameData.PlayersData[0]);
         Player2.Init(_gameData.PlayersData[1]);
