@@ -20,8 +20,8 @@ public class Saboteur : AI_Base
     {
         Instantiate(_explosion, transform.position, Quaternion.identity);
         base.Attack();
-        
-        if(_player1Dist <= _radius)
+
+        if (_player1Dist <= _radius)
         {
             _gameController.Player1.Health.Damage(_attackDamage);
         }
@@ -30,6 +30,6 @@ public class Saboteur : AI_Base
             _gameController.Player2.Health.Damage(_attackDamage);
         }
 
-        gameObject.SetActive(false);
+        GetComponent<Health>().Death();
     }
 }

@@ -26,7 +26,6 @@ public class Health : MonoBehaviour
         StartCoroutine(DamageFlash());
 
         OnCurrentHealthChanged?.Invoke();
-        print(CurrentHealth);
 
         if (CurrentHealth <= 0)
         {
@@ -50,10 +49,11 @@ public class Health : MonoBehaviour
         yield return null;
     }
 
-    protected virtual void Death()
+    public virtual void Death()
     {
-        OnDeath?.Invoke(this);
         Alive = false;
+        OnDeath?.Invoke(this);
+        OnDeath = null;
         //pgx_CameraShaker.Instance.AddShake(1);
         //Destroy(gameObject);
         gameObject.SetActive(false);

@@ -55,8 +55,6 @@ public class CharacterLookController : MonoBehaviour
         if (prevLookDirection != _currentLookDirection)
         {
             _time = 0;
-
-            Debug.Log($"{direction} - {_currentLookDirection.Update(false).name}");
         }
 
         _spriteRenderer.flipX = _currentLookDirection.FlipX;
