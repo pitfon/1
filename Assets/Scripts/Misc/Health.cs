@@ -20,6 +20,16 @@ public class Health : MonoBehaviour
         Alive = true;
     }
 
+    public virtual void Heal(float HealPoints)
+    {
+        CurrentHealth += HealPoints;
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        OnCurrentHealthChanged?.Invoke();
+    }
+
     public virtual void Damage(int damage)
     {
         CurrentHealth -= damage;
@@ -51,6 +61,8 @@ public class Health : MonoBehaviour
 
     public virtual void Death()
     {
+        ItemController.Instance.Respawn(transform.position);
+
         Alive = false;
         OnDeath?.Invoke(this);
         OnDeath = null;
