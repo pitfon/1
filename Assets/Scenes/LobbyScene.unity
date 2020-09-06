@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.007843138}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -693,6 +693,7 @@ GameObject:
   - component: {fileID: 283611991}
   - component: {fileID: 283611993}
   - component: {fileID: 283611992}
+  - component: {fileID: 283611994}
   m_Layer: 5
   m_Name: Avatar
   m_TagString: Untagged
@@ -757,6 +758,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283611990}
   m_CullTransparentMesh: 0
+--- !u!114 &283611994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283611990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.50980395}
+  m_EffectDistance: {x: 10, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &304198319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,7 +4640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193621, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
-      value: -0.1
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193621, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -4682,17 +4698,25 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5888645885755193621, guid: f394a4899694ee843af151d0250c553a, type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888645885755193621, guid: f394a4899694ee843af151d0250c553a, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193622, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193622, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.09
+      value: -5.24
       objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193622, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.02
       objectReference: {fileID: 0}
     - target: {fileID: 5888645885755193622, guid: f394a4899694ee843af151d0250c553a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5304,6 +5328,7 @@ GameObject:
   - component: {fileID: 1707036988}
   - component: {fileID: 1707036990}
   - component: {fileID: 1707036989}
+  - component: {fileID: 1707036991}
   m_Layer: 5
   m_Name: Avatar
   m_TagString: Untagged
@@ -5368,6 +5393,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707036987}
   m_CullTransparentMesh: 0
+--- !u!114 &1707036991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707036987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.50980395}
+  m_EffectDistance: {x: 10, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1738365911
 GameObject:
   m_ObjectHideFlags: 0
