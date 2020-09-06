@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bomb : Bullet
 {
+    [SerializeField] private GameObject _explosion;
     private List<Health> _aiInRange = new List<Health>();
 
     protected override void Update()
@@ -14,6 +15,7 @@ public class Bomb : Bullet
         if (_speed <= 0)
         {
             _aiInRange.ForEach(x => x.Damage((int)_gun.Damage.CurrentLevel.Value));
+            Instantiate(_explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
