@@ -7,7 +7,7 @@ public class PlayerData
     public readonly string Name;
     public readonly int LookID;
 
-    public int Money { get; private set; } = 100000;
+    public int Money { get; private set; } = 100;
     public int Health { get; private set; } = 100;
     public int Armor { get; private set; } = 0;
 
