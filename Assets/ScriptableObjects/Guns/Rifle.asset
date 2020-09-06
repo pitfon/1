@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f580a53271853478db09223a30912b14, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  _name: Rifle
+  _damage:
+    _name: Damage
+    _levels:
+    - Value: 34
+      UpgradeCost: 0
+    - Value: 37
+      UpgradeCost: 265
+    - Value: 40
+      UpgradeCost: 530
+    - Value: 43
+      UpgradeCost: 1060
+    - Value: 46
+      UpgradeCost: 2120
+  _fireRate:
+    _name: Fide delay
+    _levels:
+    - Value: 0.12
+      UpgradeCost: 0
+    - Value: 0.11
+      UpgradeCost: 265
+    - Value: 0.1
+      UpgradeCost: 530
+    - Value: 0.9
+      UpgradeCost: 1060
+    - Value: 0.8
+      UpgradeCost: 2120
+  _reloadTime:
+    _name: Reload time
+    _levels:
+    - Value: 3.7
+      UpgradeCost: 0
+    - Value: 3.4
+      UpgradeCost: 265
+    - Value: 3.1
+      UpgradeCost: 530
+    - Value: 2.8
+      UpgradeCost: 1060
+    - Value: 2.5
+      UpgradeCost: 2120
+  _magazine:
+    _name: Magazine
+    _levels:
+    - Value: 26
+      UpgradeCost: 0
+    - Value: 28
+      UpgradeCost: 265
+    - Value: 30
+      UpgradeCost: 530
+    - Value: 32
+      UpgradeCost: 1060
+    - Value: 34
+      UpgradeCost: 2120
+  _bulletSpeed: 20
+  _automatic: 1
+  _price: 2700

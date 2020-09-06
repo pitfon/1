@@ -16,33 +16,55 @@ MonoBehaviour:
   _damage:
     _name: Damage
     _levels:
-    - Value: 10
+    - Value: 26
       UpgradeCost: 0
-    - Value: 15
-      UpgradeCost: 25
-    - Value: 25
-      UpgradeCost: 50
+    - Value: 30
+      UpgradeCost: 40
+    - Value: 34
+      UpgradeCost: 80
+    - Value: 38
+      UpgradeCost: 160
+    - Value: 42
+      UpgradeCost: 320
   _fireRate:
-    _name: Fire rate
+    _name: Fire delay
     _levels:
-    - Value: 0.25
+    - Value: 0.22
       UpgradeCost: 0
-    - Value: 0.35
-      UpgradeCost: 25
-    - Value: 0.5
-      UpgradeCost: 50
+    - Value: 0.2
+      UpgradeCost: 40
+    - Value: 0.18
+      UpgradeCost: 80
+    - Value: 0.16
+      UpgradeCost: 160
+    - Value: 0.14
+      UpgradeCost: 320
   _reloadTime:
     _name: Reload time
     _levels:
-    - Value: 3
+    - Value: 2.6
       UpgradeCost: 0
+    - Value: 2.4
+      UpgradeCost: 40
+    - Value: 2.2
+      UpgradeCost: 80
+    - Value: 2
+      UpgradeCost: 160
+    - Value: 1.8
+      UpgradeCost: 320
   _magazine:
     _name: Magazine
     _levels:
-    - Value: 8
+    - Value: 9
       UpgradeCost: 0
     - Value: 12
-      UpgradeCost: 50
+      UpgradeCost: 40
+    - Value: 15
+      UpgradeCost: 80
+    - Value: 18
+      UpgradeCost: 160
+    - Value: 21
+      UpgradeCost: 320
   _bulletSpeed: 15
   _automatic: 0
   _price: 0

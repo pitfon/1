@@ -46,3 +46,5 @@ MonoBehaviour:
   _guns:
   - {fileID: 11400000, guid: da92f7f1173d5426a9c06dfb39d99003, type: 2}
   - {fileID: 11400000, guid: 386a6d180900247a0a21b64080db4dbc, type: 2}
+  - {fileID: 11400000, guid: f9370217d63684c54868933483324046, type: 2}
+  - {fileID: 11400000, guid: 7a5076dd481064a2bb47f1871e78a163, type: 2}

@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
 
     private void InitData()
     {
-        _gameData.DebugCheck();
+        //_gameData.DebugCheck();
 
         Player1.Init(_gameData.PlayersData[0]);
         Player2.Init(_gameData.PlayersData[1]);
