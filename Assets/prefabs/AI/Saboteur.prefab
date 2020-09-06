@@ -298,7 +298,7 @@ MonoBehaviour:
   _attackRange: 1.25
   _attackCooldown: 1
   _attackDamage: 25
-  _explosion: {fileID: 4408904976252661566, guid: bbffdac91da98334ead8eb02eab08485, type: 3}
+  _explosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   _radius: 2.5
   _shaker: {fileID: 1396967208}
 --- !u!114 &1176752943155621797
