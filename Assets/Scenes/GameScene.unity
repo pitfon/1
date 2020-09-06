@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameData: {fileID: 11400000, guid: 6bc898a80b8734a8582e4be05f29bfe6, type: 2}
-  _debugCheck: 1
+  _debugCheck: 0
   _mapGenerator: {fileID: 842044775}
   _mobSpawner: {fileID: 6082232441819610896}
   _gameUI: {fileID: 327025403}
@@ -738,6 +738,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 802847041268992399, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: shoot
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014798389877062163, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: shoot
+      value: 262
+      objectReference: {fileID: 0}
     - target: {fileID: 7364507438625214548, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -801,6 +809,30 @@ PrefabInstance:
     - target: {fileID: 7364507439585532216, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532221, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: shoot
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532222, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _shift
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532222, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _up
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532222, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _down
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532222, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _left
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364507439585532222, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
+      propertyPath: _right
+      value: 108
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69810041f8442c44b9dc3891d053bb81, type: 3}
