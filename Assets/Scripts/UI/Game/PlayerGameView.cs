@@ -15,6 +15,9 @@ public class PlayerGameView : MonoBehaviour
     [Space]
     [SerializeField] private PlayerMovementUI _movementUI;
 
+    [Space]
+    [SerializeField] private List<PlayerGunProgressUI> _gunProgress;
+
     private PlayerReferences _playerReferences;
 
     public void Init(PlayerReferences playerReferences)
@@ -29,6 +32,10 @@ public class PlayerGameView : MonoBehaviour
         _playerReferences.PlayerData.OnMoneyAmountChange += UpdateMoneyText;
 
         _playerReferences.Health.OnCurrentHealthChanged += UpdateHealthBar;
+
+        _gunProgress[0].Init(playerReferences.PlayerShoot);
+        _gunProgress[1].Init(playerReferences.SpecialWeapons[0]);
+        _gunProgress[2].Init(playerReferences.SpecialWeapons[1]);
 
         UpdateMoneyText();
         UpdateHealthBar();

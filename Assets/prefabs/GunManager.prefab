@@ -48,3 +48,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 386a6d180900247a0a21b64080db4dbc, type: 2}
   - {fileID: 11400000, guid: f9370217d63684c54868933483324046, type: 2}
   - {fileID: 11400000, guid: 7a5076dd481064a2bb47f1871e78a163, type: 2}
+  _specialGuns:
+  - {fileID: 11400000, guid: 371140d33704b457db003f32039fac43, type: 2}
+  - {fileID: 11400000, guid: c10c4698eb20244f4bed5dce001f6c0f, type: 2}

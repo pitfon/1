@@ -7,19 +7,23 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _shootPosition;
+    [SerializeField] private KeyCode shoot;
 
-    private PlayerReferences _playerReferences;
+    protected PlayerReferences _playerReferences;
 
-    public GunData CurrentGun { get; private set; }
+    public GunData CurrentGun { get; protected set; }
 
-    public int Ammo { get; private set; }
+    public int Ammo { get; protected set; }
 
     public float ShotCounter { get; private set; }
     public float ReloadTime { get; private set; }
 
+    public KeyCode Shoot => shoot;
+
     private AudioSource _audioSource;
 
-    [SerializeField] private KeyCode shoot;
+    public System.Action<float> Progress;
+
     public void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -31,17 +35,20 @@ public class PlayerShoot : MonoBehaviour
 
         CurrentGun = playerReferences.PlayerData.GetCurrentGunData();
         Ammo = (int)CurrentGun.Magazine.CurrentLevel.Value;
+
+        Progress?.Invoke(1);
     }
 
     private void Update()
     {
         if (Ammo <= 0)
         {
-            ReloadTime -= Time.deltaTime;
-            if (ReloadTime <= 0)
+            ReloadTime += Time.deltaTime;
+            Progress?.Invoke(ReloadTime / CurrentGun.ReloadTime.CurrentLevel.Value);
+            if (ReloadTime >= CurrentGun.ReloadTime.CurrentLevel.Value)
             {
                 Ammo = (int)CurrentGun.Magazine.CurrentLevel.Value;
-                ReloadTime = CurrentGun.ReloadTime.CurrentLevel.Value;
+                ReloadTime = 0;
                 ShotCounter = 0;
             }
         }
@@ -58,6 +65,7 @@ public class PlayerShoot : MonoBehaviour
                 _audioSource.Play();
 
                 Ammo--;
+                Progress?.Invoke(Ammo / CurrentGun.Magazine.CurrentLevel.Value);
             }
         }
     }
