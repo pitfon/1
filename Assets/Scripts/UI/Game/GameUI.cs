@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI _levelText;
+    [SerializeField] private TMPro.TextMeshProUGUI _mobsLeftText;
 
     [SerializeField] private PlayerGameView _player1GameView;
     [SerializeField] private PlayerGameView _player2GameView;
@@ -15,5 +16,13 @@ public class GameUI : MonoBehaviour
         _player2GameView.Init(player2);
 
         _levelText.text = $"Level: {gameData.GameData.Level}";
+
+        GameController.Instance.MobSpawner.OnMobDeath += UpdateMobsLeftText;
+        UpdateMobsLeftText();
+    }
+
+    private void UpdateMobsLeftText()
+    {
+        _mobsLeftText.text = $"Left: {GameController.Instance.MobSpawner.MobsLeft}";
     }
 }

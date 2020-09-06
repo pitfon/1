@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class PlayerData
     public readonly string Name;
     public readonly int LookID;
 
-    public int Money { get; private set; } = 1000;
+    public int Money { get; private set; } = 100000;
     public int Health { get; private set; } = 100;
     public int Armor { get; private set; } = 0;
 
@@ -55,5 +56,11 @@ public class PlayerData
     public GunData GetCurrentGunData()
     {
         return Guns.Find(x => x.Name == CurrentGunName);
+    }
+
+    public void ClearEvents()
+    {
+        OnMoneyAmountChange = null;
+        OnGunChange = null;
     }
 }

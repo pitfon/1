@@ -21,9 +21,14 @@ public class MapGenerator : MonoBehaviour
 
     [Space]
     [SerializeField, Range(10, 100)] private int _baseWidth = 29;
+    [SerializeField, Range(10, 100)] private int _maxWidth = 40;
 
-    private int _width;
-    private int _height;
+    [Space]
+    [SerializeField] private Transform _rightBoundary;
+    [SerializeField] private Transform _topBoundary;
+
+    public int Width { get; private set; }
+    public int Height { get; private set; }
 
     private void Update()
     {
@@ -51,15 +56,20 @@ public class MapGenerator : MonoBehaviour
 
     private void GenerateMap()
     {
-        _width = _baseWidth + _gameData.GameData.Level;
-        _height = Mathf.RoundToInt(_width * 0.5f);
+        Width = Mathf.Clamp(_baseWidth + _gameData.GameData.Level, 1, _maxWidth);
+        Height = Mathf.RoundToInt(Width * 0.5f);
+
+        _rightBoundary.transform.position = new Vector3(Width, 0, _rightBoundary.transform.position.z);
+        _topBoundary.transform.position = new Vector3(_topBoundary.transform.position.x, 0, Height);
+
+        Debug.Log($"Generate {Width}x{Height}");
 
         _groundTilemap.ClearAllTiles();
         _entryAndExitTilemap.ClearAllTiles();
 
-        for (int x = 0; x < _width; x++)
+        for (int x = 0; x < Width; x++)
         {
-            for (int y = 0; y < _height; y++)
+            for (int y = 0; y < Height; y++)
             {
                 _groundTilemap.SetTile(new Vector3Int(x, y, 0), _groundTile);
             }
@@ -68,23 +78,23 @@ public class MapGenerator : MonoBehaviour
 
     private void SetExitAndEntry()
     {
-        int amount = _height % 2 == 0 ? 4 : 3;
-        int decrease = _height % 2 == 0 ? -2 : -1;
-        int height = Mathf.FloorToInt(_height / 2);
+        int amount = Height % 2 == 0 ? 4 : 3;
+        int decrease = Height % 2 == 0 ? -2 : -1;
+        int height = Mathf.FloorToInt(Height / 2);
 
         for (int i = decrease; i < amount + decrease; i++)
         {
             for (int x = 0; x < 2; x++)
             {
                 _entryAndExitTilemap.SetTile(new Vector3Int(-x, height + i, 0), _entryTile);
-                _entryAndExitTilemap.SetTile(new Vector3Int(_width - 1 + x, height + i, 0), _exitTile);
+                _entryAndExitTilemap.SetTile(new Vector3Int(Width - 1 + x, height + i, 0), _exitTile);
             }
         }
     }
 
     private void SetCamera()
     {
-        _camera.transform.position = new Vector3(_width / 2.0f, 10, _height / 1.65f);
-        _camera.orthographicSize = _height / 1.65f;
+        _camera.transform.position = new Vector3(Width / 2.0f, 10, Height / 1.65f);
+        _camera.orthographicSize = Height / 1.65f;
     }
 }
