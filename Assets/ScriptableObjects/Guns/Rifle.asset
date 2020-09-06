@@ -35,9 +35,9 @@ MonoBehaviour:
       UpgradeCost: 265
     - Value: 0.1
       UpgradeCost: 530
-    - Value: 0.9
+    - Value: 0.09
       UpgradeCost: 1060
-    - Value: 0.8
+    - Value: 0.08
       UpgradeCost: 2120
   _reloadTime:
     _name: Reload time
