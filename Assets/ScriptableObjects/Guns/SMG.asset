@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   _name: SMG
+  _avatar: {fileID: 21300000, guid: ef6c1908b3a6b8244ae5e26ddf81aaf7, type: 3}
   _damage:
     _name: Damage
     _levels:

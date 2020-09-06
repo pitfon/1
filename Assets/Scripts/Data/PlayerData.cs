@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ public class PlayerData
     public int Armor { get; private set; } = 0;
 
     public List<GunData> Guns { get; private set; }
+    public List<GunData> SpecialGuns { get; private set; }
+    public GunData Torpedo { get; private set; }
+    public GunData Bomb { get; private set; }
     public string CurrentGunName { get; private set; }
 
     public System.Action OnMoneyAmountChange;
@@ -23,6 +27,7 @@ public class PlayerData
         LookID = lookID;
 
         Guns = GunsManager.Instance.GetGuns();
+        SpecialGuns = GunsManager.Instance.GetSpecialGuns();
         CurrentGunName = Guns.Find(x => x.IsBought).Name;
     }
 
@@ -55,5 +60,11 @@ public class PlayerData
     public GunData GetCurrentGunData()
     {
         return Guns.Find(x => x.Name == CurrentGunName);
+    }
+
+    public void ClearEvents()
+    {
+        OnMoneyAmountChange = null;
+        OnGunChange = null;
     }
 }

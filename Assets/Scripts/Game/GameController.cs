@@ -49,6 +49,7 @@ public class GameController : MonoBehaviour
             _gameData.DebugCheck();
         }
 #endif
+        _gameData.PlayersData.ForEach(x => x.ClearEvents());
 
         Player1.Init(_gameData.PlayersData[0]);
         Player2.Init(_gameData.PlayersData[1]);
