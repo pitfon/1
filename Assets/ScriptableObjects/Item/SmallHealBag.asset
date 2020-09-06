@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SmallHealBag
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 11d41507c61f7ca489e2528849c1a985, type: 3}
-  _value: 50
+  _value: 25
   _dropChance: 0
   _Prefab: {fileID: 3434451296478140771, guid: 220db289effcecc44a34932975b68abb, type: 3}
