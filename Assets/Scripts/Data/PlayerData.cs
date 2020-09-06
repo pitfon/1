@@ -33,7 +33,7 @@ public class PlayerData
 
     public bool HasMoney(int value)
     {
-        return Money - value > 0;
+        return Money - value >= 0;
     }
 
     public bool UpdateMoney(int value)

@@ -34,10 +34,17 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        OnTriggerEnterListener(other);
+    }
+
+    protected virtual void OnTriggerEnterListener(Collider other)
+    {
         AI_Base aiBase = other.GetComponent<AI_Base>();
         if (aiBase)
         {
             aiBase.GetComponent<Health>().Damage((int)PlayerReferences.PlayerShoot.CurrentGun.Damage.CurrentLevel.Value);
         }
+
+        Destroy(gameObject);
     }
 }

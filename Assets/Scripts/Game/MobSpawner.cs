@@ -24,8 +24,8 @@ public class MobSpawner : MonoBehaviour
     public void Init(GameDataHolder gameData)
     {
         _gameData = gameData;
-        _minPosition = new Vector3(3, 3, 3);
-        _maxPosisition = new Vector3(GameController.Instance.MapGenerator.Width - 3, GameController.Instance.MapGenerator.Height - 3, 0);
+        _minPosition = new Vector3(2, 2, 2);
+        _maxPosisition = new Vector3(GameController.Instance.MapGenerator.Width - 2, 0, GameController.Instance.MapGenerator.Height - 2);
 
         if (_gameData.GameData.Level <= _mobPrefabs.Count)
         {
@@ -48,7 +48,7 @@ public class MobSpawner : MonoBehaviour
 
     private void SpawnMobs()
     {
-        int spawnAmount = Mathf.Clamp(_spawnLimit, 0, _mobsToSpawn.Count);
+        int spawnAmount = Mathf.Clamp(_spawnLimit - _mobsSpawned.Count, 0, _mobsToSpawn.Count);
 
         for (int i = 0; i < spawnAmount; i++)
         {
