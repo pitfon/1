@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobPrefabs:
-  - {fileID: 4370276978047701061, guid: 708c72d81c3b5c54db79a410a9c985e6, type: 3}
   - {fileID: 438074833723571751, guid: 9ed8e2868b789e843b53e761e34f1522, type: 3}
+  - {fileID: 4370276978047701061, guid: 708c72d81c3b5c54db79a410a9c985e6, type: 3}
