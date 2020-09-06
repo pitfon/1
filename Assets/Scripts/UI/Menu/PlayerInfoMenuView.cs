@@ -19,7 +19,7 @@ public class PlayerInfoMenuView : MonoBehaviour
     public static System.Action<int, int> OnAvatarIDChanged;
     public System.Action OnStateChanged;
 
-    public void Init(int id)
+    public void Init()
     {
         for (int i = 0; i < _avatarButtons.Count; i++)
         {
@@ -35,8 +35,6 @@ public class PlayerInfoMenuView : MonoBehaviour
         }
 
         _nameInputField.onValueChanged.AddListener(OnValueChangedListener);
-
-        SetAvatarID(id);
     }
 
     public void SetAvatarID(int id)

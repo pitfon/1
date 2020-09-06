@@ -30,8 +30,11 @@ public class MenuController : MonoBehaviour
         _startButton.onClick.AddListener(StartGame);
         _startButton.interactable = false;
 
-        _player1Info.Init(0);
-        _player2Info.Init(1);
+        _player1Info.Init();
+        _player2Info.Init();
+
+        _player1Info.SetAvatarID(0);
+        _player2Info.SetAvatarID(1);
     }
 
     private void StartGame()
