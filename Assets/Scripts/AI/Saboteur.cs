@@ -5,6 +5,7 @@ public class Saboteur : AI_Base
 {
     [SerializeField] private GameObject _explosion;
     [SerializeField] private float _radius;
+    [SerializeField] private pgx_CameraShaker _shaker;
 
     protected override void Start()
     {
@@ -14,6 +15,7 @@ public class Saboteur : AI_Base
     protected override void Update()
     {
         base.Update();
+        _shaker.shakeSpeed = 10 /_agent.remainingDistance + 0.10f;
     }
 
     protected override void Attack()
