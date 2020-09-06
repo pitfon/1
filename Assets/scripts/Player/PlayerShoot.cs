@@ -75,7 +75,7 @@ public class PlayerShoot : MonoBehaviour
 
     private IEnumerator Pew()
     {
-        _pew.transform.localRotation = Quaternion.Euler(0, Random.Range(-90, 90), 0);
+        _pew.transform.localRotation = Quaternion.Euler(90, Random.Range(-90, 90), 0);
         _pew.SetActive(true);
         yield return new WaitForSeconds(_pewTime);
         _pew.SetActive(false);
