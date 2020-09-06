@@ -516,9 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03df26fc1cd6b44e1bdfcbd03f18abe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 558172574341972435, guid: 8274e3a45e9a2084f81ad716354d9e4e, type: 3}
+  _bulletPrefab: {fileID: 1812779922888575939, guid: 5111f28917b5d4581b08ba253faa1993, type: 3}
   _shootPosition: {fileID: 7364507438701382795}
-  _pew: {fileID: 0}
+  _pew: {fileID: 21224553753353013}
   _pewTime: 0.1
   shoot: 111
 --- !u!114 &2014798389877062163
@@ -535,6 +535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 7783226359488791025, guid: d416882593574491dbbbe8bb770baa1d, type: 3}
   _shootPosition: {fileID: 7364507438701382795}
-  _pew: {fileID: 0}
+  _pew: {fileID: 21224553753353013}
   _pewTime: 0.1
   shoot: 112
