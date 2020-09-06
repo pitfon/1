@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public bool Alive { get; private set; }
+
     [SerializeField] private SpriteRenderer _spriteRenderer;
     public float CurrentHealth { get; private set; } = 100;
     public float MaxHealth { get; private set; } = 100;
 
     public System.Action OnCurrentHealthChanged;
+    public System.Action<Health> OnDeath;
 
     public void Init(PlayerReferences playerReferences)
     {
         MaxHealth = playerReferences.PlayerData.Health;
         CurrentHealth = playerReferences.PlayerData.Health;
+        Alive = true;
     }
 
     public virtual void Damage(int damage)
@@ -21,12 +25,7 @@ public class Health : MonoBehaviour
         CurrentHealth -= damage;
         StartCoroutine(DamageFlash());
 
-        print(CurrentHealth);
         OnCurrentHealthChanged?.Invoke();
-
-
-        OnCurrentHealthChanged?.Invoke();
-        print(CurrentHealth);
 
         if (CurrentHealth <= 0)
         {
@@ -50,11 +49,13 @@ public class Health : MonoBehaviour
         yield return null;
     }
 
-    protected virtual void Death()
+    public virtual void Death()
     {
+        Alive = false;
+        OnDeath?.Invoke(this);
+        OnDeath = null;
+        //pgx_CameraShaker.Instance.AddShake(1);
+        //Destroy(gameObject);
         gameObject.SetActive(false);
-        pgx_CameraShaker.Instance.AddShake(1);
     }
-
-
 }

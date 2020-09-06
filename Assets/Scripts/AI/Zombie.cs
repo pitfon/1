@@ -16,5 +16,6 @@ public class Zombie : AI_Base
     protected override void Attack()
     {
         base.Attack();
+        _target.Damage(_attackDamage);
     }
 }
