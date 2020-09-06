@@ -7,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _shootPosition;
+    [SerializeField] private GameObject _pew;
+    [SerializeField] private float _pewTime = 0.1f;
     [SerializeField] private KeyCode shoot;
 
     protected PlayerReferences _playerReferences;
@@ -63,10 +65,19 @@ public class PlayerShoot : MonoBehaviour
                 newBullet.transform.localRotation = Quaternion.identity;
                 newBullet.Init(_playerReferences);
                 _audioSource.Play();
+                StartCoroutine(Pew());
 
                 Ammo--;
                 Progress?.Invoke(Ammo / CurrentGun.Magazine.CurrentLevel.Value);
             }
         }
+    }
+
+    private IEnumerator Pew()
+    {
+        _pew.transform.localRotation = Quaternion.Euler(0, Random.Range(-90, 90), 0);
+        _pew.SetActive(true);
+        yield return new WaitForSeconds(_pewTime);
+        _pew.SetActive(false);
     }
 }
