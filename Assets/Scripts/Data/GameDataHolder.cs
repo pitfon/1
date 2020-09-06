@@ -11,7 +11,7 @@ public class GameDataHolder : ScriptableObject
 
     public bool Inited { get; private set; }
 
-    public void StartGame(string player1Name = "player1", int player1LookID = 0, string player2Name = "player2", int player2LookID = 0)
+    public void StartGame(string player1Name = "player1", int player1LookID = 0, string player2Name = "player2", int player2LookID = 1)
     {
         GameData = new GameData();
 
