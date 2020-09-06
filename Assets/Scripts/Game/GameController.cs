@@ -43,10 +43,12 @@ public class GameController : MonoBehaviour
 
     private void InitData()
     {
+#if UNITY_EDITOR
         if (_debugCheck)
         {
             _gameData.DebugCheck();
         }
+#endif
 
         Player1.Init(_gameData.PlayersData[0]);
         Player2.Init(_gameData.PlayersData[1]);
