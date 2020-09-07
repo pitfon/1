@@ -12,7 +12,7 @@ public class ItemController : MonoBehaviour
     }
     public void Respawn(Vector3 ItemSpawnPoint)
     {
-        if (Random.value < 0.1f)
+        if (Random.value < 0.25f)
         {
             Item item = items.Random();
             GameObject newHealBag = Instantiate(item.Prefab) as GameObject;
